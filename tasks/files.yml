@@ -1,0 +1,8 @@
+- name: Saving a variable to a file
+  copy:
+    content: "{{ hostvars }}"
+    dest: "hostvars.json"
+
+
+- debug: var=my_hostsvars_file['127.0.0.1'].ansible_all_ipv4_addresses
+

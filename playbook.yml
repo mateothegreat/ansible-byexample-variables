@@ -1,0 +1,8 @@
+- name: ansible-byexmaples-variables
+  hosts: localhost
+  vars:
+    my_hostsvars_file: "{{ lookup('file', 'hostvars.json') | from_json }}"
+  vars_files:
+  - vars/myvars.yml
+  tasks:
+  - import_tasks: tasks/files.yml
